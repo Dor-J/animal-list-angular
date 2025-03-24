@@ -5,9 +5,26 @@
   <section class="animal-table-container">
     <table>
       <thead>
-        <td class="table-heading">rare animals</td>
+        <tr class="table-heading">
+          <th>rare animals</th>
+        </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <tr *ngFor="let animal of animalInfos">
+          <td>{{ animal.type }}</td>
+          <td>{{ animal.count }}</td>
+          <td>
+            <a
+              href="http://google.com/search?q={{
+                animal.type.replace(' ', '')
+              }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Search</a
+            >
+          </td>
+        </tr>
+      </tbody>
     </table>
   </section>
 </main>
